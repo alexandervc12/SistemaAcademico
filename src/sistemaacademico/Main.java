@@ -117,4 +117,35 @@ public class Main {
             }
             System.out.println("Estudiante no encontrado");
         }
+        
+        public static void actualizarEstudiante() {
+            System.out.println("\n--- ACTUALIZAR ESTUDIANTE ---");
+            System.out.print("Ingrese código del estudiante a actualizar: ");
+            String codigo = leer.nextLine();
+
+            for (Estudiante e : estudiantes) {
+                if (e.getCodigo().equals(codigo)) {
+                    System.out.println("Datos actuales: " + e);
+                    System.out.print("Nuevo nombre : ");
+                    String nombre = leer.nextLine();
+                    if (!nombre.isEmpty()) e.setNombre(nombre);
+
+                    System.out.print("Nuevo apellido : ");
+                    String apellido = leer.nextLine();
+                    if (!apellido.isEmpty()) e.setApellido(apellido);
+
+                    System.out.print("Nueva edad : ");
+                    String edadStr = leer.nextLine();
+                    if (!edadStr.isEmpty()) e.setEdad(Integer.parseInt(edadStr));
+
+                    System.out.print("Nuevo semestre : ");
+                    String semestreStr = leer.nextLine();
+                    if (!semestreStr.isEmpty()) e.setSemestre(Integer.parseInt(semestreStr));
+
+                    System.out.println(" Estudiante actualizado");
+                    return;
+                }
+            }
+            System.out.println(" Estudiante no encontrado");
+        }
 }
