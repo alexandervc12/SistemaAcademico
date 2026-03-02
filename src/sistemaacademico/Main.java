@@ -91,4 +91,30 @@ public class Main {
             estudiantes.add(e);
             System.out.println("Estudiante registrado exitosamente");
     }
+        
+        public static void listarEstudiantes() {
+            System.out.println("\n--- LISTA DE ESTUDIANTES ---");
+            if (estudiantes.isEmpty()) {
+                System.out.println("No hay estudiantes registrados");
+                return;
+            }
+            for (int i = 0; i < estudiantes.size(); i++) {
+                System.out.println((i + 1) + ". " + estudiantes.get(i));
+            }
+        }
+
+        public static void buscarEstudiante() {
+            System.out.println("\n--- BUSCAR ESTUDIANTE ---");
+            System.out.print("Ingrese código del estudiante: ");
+            String codigo = leer.nextLine();
+
+            for (Estudiante e : estudiantes) {
+                if (e.getCodigo().equals(codigo)) {
+                    System.out.println(" Estudiante encontrado:");
+                    System.out.println(e);
+                    return;
+                }
+            }
+            System.out.println("Estudiante no encontrado");
+        }
 }
