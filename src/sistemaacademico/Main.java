@@ -152,7 +152,7 @@ public class Main {
         public static void eliminarEstudiante() {
             System.out.println("\n--- ELIMINAR ESTUDIANTE ---");
             System.out.print("Ingrese código del estudiante a eliminar: ");
-            String codigo = LEER.nextLine();
+            String codigo = leer.nextLine();
 
             for (int i = 0; i < estudiantes.size(); i++) {
                 if (estudiantes.get(i).getCodigo().equals(codigo)) {
@@ -163,4 +163,6 @@ public class Main {
             }
             System.out.println(" Estudiante no encontrado");
         }
+        
+        
 }
